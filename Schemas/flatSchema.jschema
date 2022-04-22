@@ -1,0 +1,1216 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Schema title",
+    "description": "Description of the schema",
+    "type": "object",
+    "properties": {
+       "APIEventName":{
+	   "allOf": [
+		  {"type": "string"},
+			 {
+			   "enum": [
+					"AccountCreate",
+					"AccountDelete",
+					"AccountEdit",
+					"ACHBatchApprove",
+					"ACHBatchCreate",
+					"ACHBatchDelete",
+					"ACHBatchEdit",
+					"ACHBatchSubmit",
+					"ACHCreditEntry",
+					"ACHDebitEntry",
+					"ACHParticipantApprove",
+					"ACHParticipantCreate",
+					"ACHParticipantDelete",
+					"ACHParticipantEdit",
+					"ACHParticipantSubmit",
+					"ACHTemplateApprove",
+					"ACHTemplateCreate",
+					"ACHTemplateDelete",
+					"ACHTemplateEdit",
+					"ACHTemplateSubmit",
+					"AlertCreate",
+					"AlertDelete",
+					"AlertEdit",
+					"BillPayApprove",
+					"BillPayCreate",
+					"BillPayDelete",
+					"BillPayEdit",
+					"BillPaySubmit",
+					"CheckImageView",
+					"ChallengeRequest",
+					"ChallengeResponse",
+					"DeviceRegistered",
+					"ExternalAccountLink",
+					"ExternalAccountUnlink",
+					"Informational",
+					"InternalAccountLink",
+					"InternalAccountUnlink",
+					"Login",
+					"Logout",
+					"MFAMethodCreate",
+					"MFAMethodDelete",
+					"MFAMethodEdit",
+					"P2PTransferApprove",
+					"P2PTransferCreate",
+					"P2PTransferDelete",
+					"P2PTransferEdit",
+					"P2PTransferSubmit",
+					"PasswordChange",
+					"PayeeApprove",
+					"PayeeCreate",
+					"PayeeDelete",
+					"PayeeEdit",
+					"PayeeSubmit",
+					"RemoteDepositCapture",
+					"ReportView",
+					"SingleSignOn",
+					"TransferApprove",
+					"TransferCreate",
+					"TransferDelete",
+					"TransferEdit",
+					"TransferSubmit",
+					"TransferTemplateApprove",
+					"TransferTemplateCreate",
+					"TransferTemplateDelete",
+					"TransferTemplateEdit",
+					"TransferTemplateSubmit",
+					"UserCreate",
+					"UserDelete",
+					"UserEdit",
+					"UserEnrollmentCreate",
+					"UserEnrollmentDelete",
+					"UserEnrollmentEdit",
+					"UserView",
+					"WireApprove",
+					"WireCreate",
+					"WireDelete",
+					"WireEdit",
+					"WireSubmit",
+					"WireTemplateApprove",
+					"WireTemplateCreate",
+					"WireTemplateDelete",
+					"WireTemplateEdit",
+					"WireTemplateSubmit"
+					]
+				}
+			]
+		},
+                "SchemaVersion": {"type": "string"},
+                "TenantID": {"type": "string"},
+                "Channel": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "OLBRetail",
+                                "OLBBusiness",
+                                "MobileRetail",
+                                "MobileBusiness",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "ProviderEventName": {"type": "string"},
+                "DisplayFields": {"type": "string"},
+                "RequestID": {"type": "string"},
+                 "HTTPAcceptLanguage": {"type": "string"},
+                "HTTPAcceptCharsets": {"type": "string"},
+                "HTTPAcceptEncoding": {"type": "string"},
+                "HTTPReferer": {"type": "string"},
+                "HTTPVia": {"type": "string"},
+                "HTTPCookie": {"type": "string"},
+                "HTTPProxy": {"type": "string"},
+                "HTTPAccept": {"type": "string"},
+                "HTTPHost": {"type": "string"},
+                "HTTPRequestURI": {"type": "string"},
+                "HTTPLocation": {"type": "string"},
+                "HTTPForwarded": {"type": "string"},
+                "HTTPForwardedFor": {"type": "string"},
+                "HTTPXForwarded": {"type": "string"},
+                "HTTPXForwardedFor": {"type": "string"},
+                "HTTPClientIP": {"type": "string"},
+                "HTTPXClusterClientIP": {"type": "string"},
+                "HTTPXTrusteerRapport": {"type": "string"},
+                "UserAgentStringDOM": {"type": "string"},
+                "OSPlatform": {"type": "string"},
+                "TimeZoneOffset": {"type": "string"},
+                "LanguageBrowser": {"type": "string"},
+                "LanguageSystem": {"type": "string"},
+                "LanguageUser": {"type": "string"},
+                "ScreenResolution": {"type": "string"},
+                "JavaEnabled": {"type": "string"},
+                "CookiesEnabled": {"type": "string"},
+                "BrowserPlugins": {"type": "string"},
+                "FontList": {"type": "string"},
+                "FlashVersion": {"type": "string"},
+                "SilverlightVersion": {"type": "string"},
+                "BrowserPlugInsCount": {"type": "integer"},
+                "Longitude": {"type": "number"},
+                "Latitude": {"type": "number"},
+                "ImmutableUserID": {"type": "string"},
+                "SignOnID": {"type": "string"},
+                "UTCTimestamp": {"type": "integer"},
+                "IPAddress": {"type": "string"},
+                "IPv6Address": {"type": "string"},
+                "UserAgentString": {"type": "string"},
+                "Cookie": {"type": "string"},
+                "DeviceID": {"type": "string"},
+                "SessionID": {"type": "string"},
+                "ImmutableCompanyID": {"type": "string"},
+                "CompanySignOnID": {"type": "string"},
+                "CompanyList": {"type": "string"},
+                "DeviceType": {"type": "string"},
+                        "MobileChannel": {
+                            "allOf": [
+                                {"type": "string"},
+                                {
+                                    "enum": [
+                                        "MobileApp",
+                                        "Browser",
+                                        "SMS",
+                                        "Unknown",
+                                        "Other"
+                                    ]
+                                }
+                            ]
+                        },
+                 "PhoneNumber": {"type": "string"},
+                 "MobileCompanyID": {"type": "string"},
+                 "ID": {"type": "string"},
+                "Name": {"type": "string"},
+                "RoutingNumber": {"type": "string"},
+                "AccountNumber": {"type": "string"},
+                "Country": {"type": "string"},
+                "UsualAmount": {"type": "number"},
+                "Description": {"type": "string"},
+                "Rest": {
+                            "type": "array",
+                            "additionalItems": false,
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "TranCode": {"type": "string"}
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "TraceNumber": {"type": "string"}
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "Amount": {"type": "number"}
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "IsOffset": {
+                                                "allOf": [
+                                                    {"type": "string"},
+                                                    {
+                                                        "enum": [
+                                                            "True",
+                                                            "False",
+                                                            "Unknown"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "Description": {"type": "string"}
+                                        }
+                                    }
+                                ]
+                            },
+                            "maxItems": 5,
+                            "minItems": 3
+                        },
+                        "BatchID": {"type": "string"},
+                "BatchName": {"type": "string"},
+                "Action": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Create",
+                                "Edit",
+                                "Delete",
+                                "Submit",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "ParticipantID": {"type": "string"},
+                "ParticipantName": {"type": "string"},
+                "TemplateName": {"type": "string"},
+                "FromFile": {"type": "boolean"},
+                "FileName": {"type": "string"},
+                "OriginatorName": {"type": "string"},
+                "FromAccount": {"type": "string"},
+                "ACHStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "StatusReason": {"type": "string"},
+                "SECCode": {"type": "string"},
+                "EffectiveDate": {"type": "string"},
+                "TotalEntries": {"type": "integer"},
+                "TotalDebitAmount": {"type": "number"},
+                "TotalCreditAmount": {"type": "number"},
+                "EntryMethod": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Free Form",
+                                "From Template",
+                                "From ACH File",
+                                "From Other File",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "DualAuth": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "True",
+                                "False",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "Recurring": {"type": "boolean"},
+                "Period": {"type": "string"},
+                "StartDate": {"type": "string"},
+                "EndDate": {"type": "string"},
+                "PaymentID": {"type": "string"},
+                "PayeeID": {"type": "string"},
+                "PayeeName": {"type": "string"},
+                "PayeeAddress": {"type": "string"},
+                "PayeePhoneNumber": {"type": "string"},
+                "PayeeMatch": {"type": "boolean"},
+                "SubscribersPayeeAccountNumber": {"type": "string"},
+                "FromAccountNumber": {"type": "string"},
+                "FromAccountRoutingNumber": {"type": "string"},
+                "AmountInUSDollars": {"type": "number"},
+                "PaymentType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Check",
+                                "Electronic",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "PaymentDate": {"type": "string"},
+                "Direction": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Outgoing",
+                                "Incoming",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "ToAccount": {"type": "string"},
+                "TransferStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "AmountInISOCurrency": {"type": "number"},
+                "ExchangeRate": {"type": "number"},
+                "AmountCurrencyCode": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "AED",
+                                "AFN",
+                                "ALL",
+                                "AMD",
+                                "ANG",
+                                "AOA",
+                                "ARS",
+                                "AUD",
+                                "AWG",
+                                "AZN",
+                                "BAM",
+                                "BBD",
+                                "BDT",
+                                "BGN",
+                                "BHD",
+                                "BIF",
+                                "BMD",
+                                "BND",
+                                "BOB",
+                                "BOV",
+                                "BRL",
+                                "BSD",
+                                "BTN",
+                                "BWP",
+                                "BYR",
+                                "BZD",
+                                "CAD",
+                                "CDF",
+                                "CHE",
+                                "CHF",
+                                "CHW",
+                                "CLF",
+                                "CLP",
+                                "CNY",
+                                "COP",
+                                "COU",
+                                "CRC",
+                                "CUC",
+                                "CUP",
+                                "CVE",
+                                "CZK",
+                                "DJF",
+                                "DKK",
+                                "DOP",
+                                "DZD",
+                                "EGP",
+                                "ERN",
+                                "ETB",
+                                "EUR",
+                                "FJD",
+                                "FKP",
+                                "GBP",
+                                "GEL",
+                                "GHS",
+                                "GIP",
+                                "GMD",
+                                "GNF",
+                                "GTQ",
+                                "GYD",
+                                "HKD",
+                                "HNL",
+                                "HRK",
+                                "HTG",
+                                "HUF",
+                                "IDR",
+                                "ILS",
+                                "INR",
+                                "IQD",
+                                "IRR",
+                                "ISK",
+                                "JMD",
+                                "JOD",
+                                "JPY",
+                                "KES",
+                                "KGS",
+                                "KHR",
+                                "KMF",
+                                "KPW",
+                                "KRW",
+                                "KWD",
+                                "KYD",
+                                "KZT",
+                                "LAK",
+                                "LBP",
+                                "LKR",
+                                "LRD",
+                                "LSL",
+                                "LTL",
+                                "LYD",
+                                "MAD",
+                                "MDL",
+                                "MGA",
+                                "MKD",
+                                "MMK",
+                                "MNT",
+                                "MOP",
+                                "MRO",
+                                "MUR",
+                                "MVR",
+                                "MWK",
+                                "MXN",
+                                "MXV",
+                                "MYR",
+                                "MZN",
+                                "NAD",
+                                "NGN",
+                                "NIO",
+                                "NOK",
+                                "NPR",
+                                "NZD",
+                                "OMR",
+                                "Other",
+                                "PAB",
+                                "PEN",
+                                "PGK",
+                                "PHP",
+                                "PKR",
+                                "PLN",
+                                "PYG",
+                                "QAR",
+                                "RON",
+                                "RSD",
+                                "RUB",
+                                "RWF",
+                                "SAR",
+                                "SBD",
+                                "SCR",
+                                "SDG",
+                                "SEK",
+                                "SGD",
+                                "SHP",
+                                "SLL",
+                                "SOS",
+                                "SRD",
+                                "SSP",
+                                "STD",
+                                "SVC",
+                                "SYP",
+                                "SZL",
+                                "THB",
+                                "TJS",
+                                "TMT",
+                                "TND",
+                                "TOP",
+                                "TRY",
+                                "TTD",
+                                "TWD",
+                                "TZS",
+                                "UAH",
+                                "UGX",
+                                "Unknown",
+                                "USD",
+                                "USN",
+                                "USS",
+                                "UYI",
+                                "UYU",
+                                "UZS",
+                                "VEF",
+                                "VND",
+                                "VUV",
+                                "WST",
+                                "XAF",
+                                "XAG",
+                                "XAU",
+                                "XBA",
+                                "XBB",
+                                "XBC",
+                                "XBD",
+                                "XCD",
+                                "XDR",
+                                "XOF",
+                                "XPD",
+                                "XPF",
+                                "XPT",
+                                "XSU",
+                                "XTS",
+                                "XUA",
+                                "XXX",
+                                "YER",
+                                "ZAR",
+                                "ZMW",
+                                "ZWL"
+                            ]
+                        }
+                    ]
+                },
+                "ReceivingBankID": {"type": "string"},
+                "ReceivingBankName": {"type": "string"},
+                "Recipient": {"type": "string"},
+                "OtherInstructions": {"type": "string"},
+                "BusinessFunctionCode": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "BTR",
+                                "CKS",
+                                "CTP",
+                                "CTR",
+                                "DEP",
+                                "DRB",
+                                "DRC",
+                                "DRW",
+                                "FFR",
+                                "FFS",
+                                "SVC"
+                            ]
+                        }
+                    ]
+                },
+
+                "Amount": {"type": "number"},
+                "InstructedAmount": {"type": "number"},
+                "InstructedCurrencyCode": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "AED",
+                                "AFN",
+                                "ALL",
+                                "AMD",
+                                "ANG",
+                                "AOA",
+                                "ARS",
+                                "AUD",
+                                "AWG",
+                                "AZN",
+                                "BAM",
+                                "BBD",
+                                "BDT",
+                                "BGN",
+                                "BHD",
+                                "BIF",
+                                "BMD",
+                                "BND",
+                                "BOB",
+                                "BOV",
+                                "BRL",
+                                "BSD",
+                                "BTN",
+                                "BWP",
+                                "BYR",
+                                "BZD",
+                                "CAD",
+                                "CDF",
+                                "CHE",
+                                "CHF",
+                                "CHW",
+                                "CLF",
+                                "CLP",
+                                "CNY",
+                                "COP",
+                                "COU",
+                                "CRC",
+                                "CUC",
+                                "CUP",
+                                "CVE",
+                                "CZK",
+                                "DJF",
+                                "DKK",
+                                "DOP",
+                                "DZD",
+                                "EGP",
+                                "ERN",
+                                "ETB",
+                                "EUR",
+                                "FJD",
+                                "FKP",
+                                "GBP",
+                                "GEL",
+                                "GHS",
+                                "GIP",
+                                "GMD",
+                                "GNF",
+                                "GTQ",
+                                "GYD",
+                                "HKD",
+                                "HNL",
+                                "HRK",
+                                "HTG",
+                                "HUF",
+                                "IDR",
+                                "ILS",
+                                "INR",
+                                "IQD",
+                                "IRR",
+                                "ISK",
+                                "JMD",
+                                "JOD",
+                                "JPY",
+                                "KES",
+                                "KGS",
+                                "KHR",
+                                "KMF",
+                                "KPW",
+                                "KRW",
+                                "KWD",
+                                "KYD",
+                                "KZT",
+                                "LAK",
+                                "LBP",
+                                "LKR",
+                                "LRD",
+                                "LSL",
+                                "LTL",
+                                "LYD",
+                                "MAD",
+                                "MDL",
+                                "MGA",
+                                "MKD",
+                                "MMK",
+                                "MNT",
+                                "MOP",
+                                "MRO",
+                                "MUR",
+                                "MVR",
+                                "MWK",
+                                "MXN",
+                                "MXV",
+                                "MYR",
+                                "MZN",
+                                "NAD",
+                                "NGN",
+                                "NIO",
+                                "NOK",
+                                "NPR",
+                                "NZD",
+                                "OMR",
+                                "Other",
+                                "PAB",
+                                "PEN",
+                                "PGK",
+                                "PHP",
+                                "PKR",
+                                "PLN",
+                                "PYG",
+                                "QAR",
+                                "RON",
+                                "RSD",
+                                "RUB",
+                                "RWF",
+                                "SAR",
+                                "SBD",
+                                "SCR",
+                                "SDG",
+                                "SEK",
+                                "SGD",
+                                "SHP",
+                                "SLL",
+                                "SOS",
+                                "SRD",
+                                "SSP",
+                                "STD",
+                                "SVC",
+                                "SYP",
+                                "SZL",
+                                "THB",
+                                "TJS",
+                                "TMT",
+                                "TND",
+                                "TOP",
+                                "TRY",
+                                "TTD",
+                                "TWD",
+                                "TZS",
+                                "UAH",
+                                "UGX",
+                                "Unknown",
+                                "USD",
+                                "USN",
+                                "USS",
+                                "UYI",
+                                "UYU",
+                                "UZS",
+                                "VEF",
+                                "VND",
+                                "VUV",
+                                "WST",
+                                "XAF",
+                                "XAG",
+                                "XAU",
+                                "XBA",
+                                "XBB",
+                                "XBC",
+                                "XBD",
+                                "XCD",
+                                "XDR",
+                                "XOF",
+                                "XPD",
+                                "XPF",
+                                "XPT",
+                                "XSU",
+                                "XTS",
+                                "XUA",
+                                "XXX",
+                                "YER",
+                                "ZAR",
+                                "ZMW",
+                                "ZWL"
+                            ]
+                        }
+                    ]
+                },
+                "TransferDate": {"type": "string"},
+                "SettlementMethod": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "FED",
+                                "SWIFT",
+                                "BOOK",
+                                "FX",
+                                "CHIPS",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "DestinationType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Domestic",
+                                "International",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "Status": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "On Hold",
+                                "Canceled",
+                                "Released",
+                                "Rejected",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+
+                "Source": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Online",
+                                "Email",
+                                "Fax",
+                                "CallCenter",
+                                "Branch",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "OBI": {"type": "string"},
+                "BBI": {"type": "string"},
+                "Recurrence": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Recurring",
+                                "OneTime",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "WireID": {"type": "string"},
+                "RepeatRequest": {"type": "boolean"},
+                "WireStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "TransferID": {"type": "string"},
+                "FromTemplate": {"type": "boolean"},
+                "ToAccountHolderName": {"type": "string"},
+                "AccountLinkStatus": {"type": "boolean"},
+                "SendingBankID": {"type": "string"},
+
+
+                        "Sender": {"type": "string"},
+                        "SenderAddress": {"type": "string"},
+                        "SenderPhoneNumber": {"type": "string"},
+                        "RecipientAddress": {"type": "string"},
+                        "RecipientPhoneNumber": {"type": "string"},
+
+                "FromBankID": {"type": "string"},
+                "FromBankName": {"type": "string"},
+                "RemoteDepositStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "CheckNumber": {"type": "string"},
+                "SystemAccessed": {"type": "string"},
+                "SystemType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Account Opening",
+                                "Bill Pay",
+                                "Check Ordering",
+                                "Credit Card Payment",
+                                "External Transfer",
+                                "Loan Service",
+                                "Remote Check Deposit",
+                                "Statements",
+                                "Notification Options",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "LoginStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Successful",
+                                "SystemDown",
+                                "InvalidCredentials",
+                                "UserAccessRestricted",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+"ActivityAttempted": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "AccountMgt",
+                                "ACH",
+                                "BillPay",
+                                "CheckImageView",
+                                "Login",
+                                "MFAOptionsChanged",
+                                "PasswordChange",
+                                "RemoteDepositCapture",
+                                "SingleSignOn",
+                                "Transfer",
+                                "UserMgt",
+                                "Wire",
+                                "Other",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "ChallengeReason": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "DeviceUnrecognized",
+                                "UserAccessRestricted",
+                                "SystemOrAdminForcedReset",
+                                "UserCausedReset",
+                                "UserPreference",
+                                "ActivityRestricted",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Duration": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "CurrentSession",
+                                "CurrentEvent",
+                                "UntilReset",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "SystemName": {"type": "string"},
+                "OOBAChannelData": {"type": "string"},
+                "OOBAChannelType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Phone",
+                                "Email",
+                                "Text",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "State": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "ChallengeRequested",
+                                "Success",
+                                "FailedAuthentication",
+                                "TimedOut",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "TimeTaken": {"type": "string"},
+                "LogoutReason": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "SystemTimedOut",
+                                "UserInitiated",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Attribute": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "NameOnAccount",
+                                "ContactAddress",
+                                "ContactPhoneNumber",
+                                "ContactEMail",
+                                "Limit",
+                                "Permission",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "NewValue": {"type": "string"},
+                "PriorValue": {"type": "string"},
+                "DisplayInformation": {"type": "string"},
+                "MFAType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Question",
+                                "Image",
+                                "SecurityPhrase",
+                                "Channel",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "NewMFAType": {"type": "string"},
+                "PriorMFAType": {"type": "string"},
+                "PriorChannelType": {"type": "string"},
+                "NewChannelType": {"type": "string"},
+              
+                "AttributeQualifier": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Home",
+                                "Work",
+                                "Mobile",
+                                "Primary",
+                                "Secondary",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "AffectedImmutableUserID": {"type": "string"},
+                "AffectedUserSignOnID": {"type": "string"},
+                "ViewedImmutableUserID": {"type": "string"},
+                "RecipientID": {"type": "string"},
+                "RecipientName": {"type": "string"},
+                "RecipientPhone": {"type": "string"},
+                "RecipientEmail": {"type": "string"},
+                "RecipientBankID": {"type": "string"},
+                "RecipientAccount": {"type": "string"},
+                "RecipientBankName": {"type": "string"},
+                "TokenType": {"type": "string"},
+                "TokenValue": {"type": "string"},
+                "TokenStatus": {"type": "string"},
+                "FailureCode": {"type": "string"},
+                "FailureDescription": {"type": "string"},
+                "AmountInOriginatingCurrency": {"type": "number"},
+                "Type": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PayPal",
+                                "Popmoney",
+                                "clearXchange",
+                                "Square",
+                                "AmexServe",
+                                "Venmo",
+                                "Dwolla",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "TransferMode": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Send",
+                                "Request",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Alert": {"type": "string"},
+                "TransferTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "External",
+                        "Internal",
+                        "Self",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "AccountTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Brokerage",
+                        "Checking",
+                        "Credit Card",
+                        "Loan",
+                        "Retirement",
+                        "Money Market",
+                        "Saving",
+                        "Certificate of Deposit",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "DestinationTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Domestic",
+                        "International",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "OOBAChannelTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Phone",
+                        "SMS",
+                        "Email",
+                        "App",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "SystemTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "BankingChannel",
+                        "TransferMethod",
+                        "AccountUpgrade",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        }
+
+
+        }
+    }

@@ -1,0 +1,168 @@
+{ "properties": {
+	"APIEventName":{
+	   "allOf": [
+		  {"type": "string"},
+			 {
+			   "enum": [
+					"AccountCreate",
+					"AccountDelete",
+					"AccountEdit",
+					"ACHBatchApprove",
+					"ACHBatchCreate",
+					"ACHBatchDelete",
+					"ACHBatchEdit",
+					"ACHBatchSubmit",
+					"ACHCreditEntry",
+					"ACHDebitEntry",
+					"ACHParticipantApprove",
+					"ACHParticipantCreate",
+					"ACHParticipantDelete",
+					"ACHParticipantEdit",
+					"ACHParticipantSubmit",
+					"ACHTemplateApprove",
+					"ACHTemplateCreate",
+					"ACHTemplateDelete",
+					"ACHTemplateEdit",
+					"ACHTemplateSubmit",
+					"AlertCreate",
+					"AlertDelete",
+					"AlertEdit",
+					"BillPayApprove",
+					"BillPayCreate",
+					"BillPayDelete",
+					"BillPayEdit",
+					"BillPaySubmit",
+					"CheckImageView",
+					"ChallengeRequest",
+					"ChallengeResponse",
+					"DeviceRegistered",
+					"ExternalAccountLink",
+					"ExternalAccountUnlink",
+					"Informational",
+					"InternalAccountLink",
+					"InternalAccountUnlink",
+					"Login",
+					"Logout",
+					"MFAMethodCreate",
+					"MFAMethodDelete",
+					"MFAMethodEdit",
+					"P2PTransferApprove",
+					"P2PTransferCreate",
+					"P2PTransferDelete",
+					"P2PTransferEdit",
+					"P2PTransferSubmit",
+					"PasswordChange",
+					"PayeeApprove",
+					"PayeeCreate",
+					"PayeeDelete",
+					"PayeeEdit",
+					"PayeeSubmit",
+					"RemoteDepositCapture",
+					"ReportView",
+					"SingleSignOn",
+					"TransferApprove",
+					"TransferCreate",
+					"TransferDelete",
+					"TransferEdit",
+					"TransferSubmit",
+					"TransferTemplateApprove",
+					"TransferTemplateCreate",
+					"TransferTemplateDelete",
+					"TransferTemplateEdit",
+					"TransferTemplateSubmit",
+					"UserCreate",
+					"UserDelete",
+					"UserEdit",
+					"UserEnrollmentCreate",
+					"UserEnrollmentDelete",
+					"UserEnrollmentEdit",
+					"UserView",
+					"WireApprove",
+					"WireCreate",
+					"WireDelete",
+					"WireEdit",
+					"WireSubmit",
+					"WireTemplateApprove",
+					"WireTemplateCreate",
+					"WireTemplateDelete",
+					"WireTemplateEdit",
+					"WireTemplateSubmit"
+					]
+				}
+			]
+		},
+     "Common": {
+            "type": "object",
+            "required": [
+                "SchemaVersion",
+                "TenantID",
+                "Channel",
+                "ProviderEventName"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "SchemaVersion": {"type": "string"},
+                "TenantID": {"type": "string"},
+                "Channel": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "OLBRetail",
+                                "OLBBusiness",
+                                "MobileRetail",
+                                "MobileBusiness",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "ProviderEventName": {"type": "string"},
+                "DisplayFields": {"type": "string"},
+                "RequestID": {"type": "string"}
+            }
+        },
+ 
+        "RetailSessionData": {
+            "type": "object",
+            "required": [
+                "ImmutableUserID",
+                "SignOnID",
+                "UTCTimestamp",
+                "IPAddress",
+                "UserAgentString"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "ImmutableUserID": {"type": "string"},
+                "SignOnID": {"type": "string"},
+                "UTCTimestamp": {"type": "integer"},
+                "IPAddress": {"type": "string"},
+                "IPv6Address": {"type": "string"},
+                "UserAgentString": {"type": "string"},
+                "Cookie": {"type": "string"},
+                "DeviceID": {"type": "string"},
+                "SessionID": {"type": "string"},
+                "BrowserHeader": {"$ref": "#/definitions/BrowserHeaderData"},
+                "DeviceAttribute": {"$ref": "#/definitions/DeviceAttributeData"}
+            }
+        },
+                "PasswordChangeReason": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Forgotten",
+                                "AdminReset",
+                                "UserInitiated",
+                                "Expired",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "AffectedImmutableUserID": {"type": "string"}
+            }
+  }

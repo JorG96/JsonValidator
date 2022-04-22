@@ -1,0 +1,2439 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$id": "http://www.guardiananalytics.com/APIDataTypes#",
+    "definitions": {
+        "APIEventName": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "AccountCreate",
+                        "AccountDelete",
+                        "AccountEdit",
+                        "ACHBatchApprove",
+                        "ACHBatchCreate",
+                        "ACHBatchDelete",
+                        "ACHBatchEdit",
+                        "ACHBatchSubmit",
+                        "ACHCreditEntry",
+                        "ACHDebitEntry",
+                        "ACHParticipantApprove",
+                        "ACHParticipantCreate",
+                        "ACHParticipantDelete",
+                        "ACHParticipantEdit",
+                        "ACHParticipantSubmit",
+                        "ACHTemplateApprove",
+                        "ACHTemplateCreate",
+                        "ACHTemplateDelete",
+                        "ACHTemplateEdit",
+                        "ACHTemplateSubmit",
+                        "AlertCreate",
+                        "AlertDelete",
+                        "AlertEdit",
+                        "BillPayApprove",
+                        "BillPayCreate",
+                        "BillPayDelete",
+                        "BillPayEdit",
+                        "BillPaySubmit",
+                        "CheckImageView",
+                        "ChallengeRequest",
+                        "ChallengeResponse",
+                        "DeviceRegistered",
+                        "ExternalAccountLink",
+                        "ExternalAccountUnlink",
+                        "Informational",
+                        "InternalAccountLink",
+                        "InternalAccountUnlink",
+                        "Login",
+                        "Logout",
+                        "MFAMethodCreate",
+                        "MFAMethodDelete",
+                        "MFAMethodEdit",
+                        "P2PTransferApprove",
+                        "P2PTransferCreate",
+                        "P2PTransferDelete",
+                        "P2PTransferEdit",
+                        "P2PTransferSubmit",
+                        "PasswordChange",
+                        "PayeeApprove",
+                        "PayeeCreate",
+                        "PayeeDelete",
+                        "PayeeEdit",
+                        "PayeeSubmit",
+                        "RemoteDepositCapture",
+                        "ReportView",
+                        "SingleSignOn",
+                        "TransferApprove",
+                        "TransferCreate",
+                        "TransferDelete",
+                        "TransferEdit",
+                        "TransferSubmit",
+                        "TransferTemplateApprove",
+                        "TransferTemplateCreate",
+                        "TransferTemplateDelete",
+                        "TransferTemplateEdit",
+                        "TransferTemplateSubmit",
+                        "UserCreate",
+                        "UserDelete",
+                        "UserEdit",
+                        "UserEnrollmentCreate",
+                        "UserEnrollmentDelete",
+                        "UserEnrollmentEdit",
+                        "UserView",
+                        "WireApprove",
+                        "WireCreate",
+                        "WireDelete",
+                        "WireEdit",
+                        "WireSubmit",
+                        "WireTemplateApprove",
+                        "WireTemplateCreate",
+                        "WireTemplateDelete",
+                        "WireTemplateEdit",
+                        "WireTemplateSubmit"
+                    ]
+                }
+            ]
+        },
+        "CommonData": {
+            "type": "object",
+            "required": [
+                "SchemaVersion",
+                "TenantID",
+                "Channel",
+                "ProviderEventName"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "SchemaVersion": {"type": "string"},
+                "TenantID": {"type": "string"},
+                "Channel": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "OLBRetail",
+                                "OLBBusiness",
+                                "MobileRetail",
+                                "MobileBusiness",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "ProviderEventName": {"type": "string"},
+                "DisplayFields": {"type": "string"},
+                "RequestID": {"type": "string"}
+            }
+        },
+        "BrowserHeaderData": {
+            "type": "object",
+            "required": ["HTTPHost"],
+            "additionalProperties": false,
+            "properties": {
+                "HTTPAcceptLanguage": {"type": "string"},
+                "HTTPAcceptCharsets": {"type": "string"},
+                "HTTPAcceptEncoding": {"type": "string"},
+                "HTTPReferer": {"type": "string"},
+                "HTTPVia": {"type": "string"},
+                "HTTPCookie": {"type": "string"},
+                "HTTPProxy": {"type": "string"},
+                "HTTPAccept": {"type": "string"},
+                "HTTPHost": {"type": "string"},
+                "HTTPRequestURI": {"type": "string"},
+                "HTTPLocation": {"type": "string"},
+                "HTTPForwarded": {"type": "string"},
+                "HTTPForwardedFor": {"type": "string"},
+                "HTTPXForwarded": {"type": "string"},
+                "HTTPXForwardedFor": {"type": "string"},
+                "HTTPClientIP": {"type": "string"},
+                "HTTPXClusterClientIP": {"type": "string"},
+                "HTTPXTrusteerRapport": {"type": "string"}
+            }
+        },
+        "DeviceAttributeData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UserAgentStringDOM": {"type": "string"},
+                "OSPlatform": {"type": "string"},
+                "TimeZoneOffset": {"type": "string"},
+                "LanguageBrowser": {"type": "string"},
+                "LanguageSystem": {"type": "string"},
+                "LanguageUser": {"type": "string"},
+                "ScreenResolution": {"type": "string"},
+                "JavaEnabled": {"type": "string"},
+                "CookiesEnabled": {"type": "string"},
+                "BrowserPlugins": {"type": "string"},
+                "FontList": {"type": "string"},
+                "FlashVersion": {"type": "string"},
+                "SilverlightVersion": {"type": "string"},
+                "BrowserPlugInsCount": {"type": "integer"},
+                "Longitude": {"type": "number"},
+                "Latitude": {"type": "number"}
+            }
+        },
+        "SessionData": {
+            "type": "object",
+            "required": [
+                "ImmutableUserID",
+                "SignOnID",
+                "UTCTimestamp",
+                "IPAddress",
+                "UserAgentString"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "ImmutableUserID": {"type": "string"},
+                "SignOnID": {"type": "string"},
+                "UTCTimestamp": {"type": "integer"},
+                "IPAddress": {"type": "string"},
+                "IPv6Address": {"type": "string"},
+                "UserAgentString": {"type": "string"},
+                "Cookie": {"type": "string"},
+                "DeviceID": {"type": "string"},
+                "SessionID": {"type": "string"},
+                "BrowserHeader": {"$ref": "#/definitions/BrowserHeaderData"},
+                "DeviceAttribute": {"$ref": "#/definitions/DeviceAttributeData"}
+            }
+        },
+        "RetailSessionData": {
+            "allOf": [
+                {"$ref": "#/definitions/SessionData"}
+            ]
+        },
+        "BusinessSessionData": {
+            "required": ["ImmutableCompanyID"],
+            "allOf": [
+                {"$ref": "#/definitions/SessionData"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "ImmutableCompanyID": {"type": "string"},
+                        "CompanySignOnID": {"type": "string"},
+                        "CompanyList": {"type": "string"}
+                    }
+                }
+            ]
+        },
+        "MobileSessionData": {
+            "required": [
+                "DeviceType",
+                "MobileChannel",
+                "PhoneNumber"
+            ],
+            "allOf": [
+                {"$ref": "#/definitions/SessionData"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "DeviceType": {"type": "string"},
+                        "MobileChannel": {
+                            "allOf": [
+                                {"type": "string"},
+                                {
+                                    "enum": [
+                                        "MobileApp",
+                                        "Browser",
+                                        "SMS",
+                                        "Unknown",
+                                        "Other"
+                                    ]
+                                }
+                            ]
+                        },
+                        "PhoneNumber": {"type": "string"}
+                    }
+                }
+            ]
+        },
+        "MobileRetailSessionData": {
+            "allOf": [
+                {"$ref": "#/definitions/MobileSessionData"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": ""
+                }
+            ]
+        },
+        "MobileBusinessSessionData": {
+            "required": ["ImmutableCompanyID"],
+            "allOf": [
+                {"$ref": "#/definitions/MobileSessionData"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "MobileCompanyID": {"type": "string"},
+                        "ImmutableCompanyID": {"type": "string"},
+                        "CompanySignOnID": {"type": "string"},
+                        "CompanyList": {"type": "string"}
+                    }
+                }
+            ]
+        },
+        "ACHParticipantFields": {
+            "type": "object",
+            "required": [
+                "ID",
+                "Name",
+                "RoutingNumber",
+                "AccountNumber",
+                "Country"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "ID": {"type": "string"},
+                "Name": {"type": "string"},
+                "RoutingNumber": {"type": "string"},
+                "AccountNumber": {"type": "string"},
+                "Country": {"type": "string"},
+                "UsualAmount": {"type": "number"},
+                "Description": {"type": "string"}
+            }
+        },
+        "ACHEntryFields": {
+            "required": ["Rest"],
+            "allOf": [
+                {"$ref": "#/definitions/ACHParticipantFields"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Rest": {
+                            "type": "array",
+                            "additionalItems": false,
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "TranCode": {"type": "string"}
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "TraceNumber": {"type": "string"}
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "Amount": {"type": "number"}
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "IsOffset": {
+                                                "allOf": [
+                                                    {"type": "string"},
+                                                    {
+                                                        "enum": [
+                                                            "True",
+                                                            "False",
+                                                            "Unknown"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "Description": {"type": "string"}
+                                        }
+                                    }
+                                ]
+                            },
+                            "maxItems": 5,
+                            "minItems": 3
+                        }
+                    }
+                }
+            ]
+        },
+        "ACHCreditOrDebitEntryEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "BatchID",
+                "Action",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "BatchID": {"type": "string"},
+                "BatchName": {"type": "string"},
+                "Action": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Create",
+                                "Edit",
+                                "Delete",
+                                "Submit",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "EventFields": {"$ref": "#/definitions/ACHEntryFields"}
+            }
+        },
+        "CreateEditSubmitApproveACHParticipantEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/ACHParticipantFields"}
+            }
+        },
+        "DeleteACHParticipantEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "ParticipantID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "ParticipantID": {"type": "string"},
+                "ParticipantName": {"type": "string"}
+            }
+        },
+        "CreateEditSubmitApproveACHTemplateEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TemplateName",
+                "FromFile",
+                "ACHStatus"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TemplateName": {"type": "string"},
+                "FromFile": {"type": "boolean"},
+                "FileName": {"type": "string"},
+                "Description": {"type": "string"},
+                "OriginatorName": {"type": "string"},
+                "FromAccount": {"type": "string"},
+                "ACHStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "StatusReason": {"type": "string"}
+            }
+        },
+        "DeleteACHTemplateEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TemplateName"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TemplateName": {"type": "string"}
+            }
+        },
+        "ACHBatchFields": {
+            "type": "object",
+            "required": [
+                "BatchID",
+                "SECCode",
+                "OriginatorName",
+                "FromAccount",
+                "EffectiveDate",
+                "TotalEntries",
+                "TotalDebitAmount",
+                "TotalCreditAmount"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "BatchID": {"type": "string"},
+                "BatchName": {"type": "string"},
+                "SECCode": {"type": "string"},
+                "OriginatorName": {"type": "string"},
+                "FromAccount": {"type": "string"},
+                "EffectiveDate": {"type": "string"},
+                "TotalEntries": {"type": "integer"},
+                "TotalDebitAmount": {"type": "number"},
+                "TotalCreditAmount": {"type": "number"},
+                "Description": {"type": "string"}
+            }
+        },
+        "CreateEditSubmitApproveACHBatchEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields",
+                "EntryMethod",
+                "DualAuth",
+                "ACHStatus"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/ACHBatchFields"},
+                "EntryMethod": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Free Form",
+                                "From Template",
+                                "From ACH File",
+                                "From Other File",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "DualAuth": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "True",
+                                "False",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "TemplateName": {"type": "string"},
+                "FileName": {"type": "string"},
+                "ACHStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "StatusReason": {"type": "string"}
+            }
+        },
+        "DeleteACHBatchEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "BatchID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "BatchID": {"type": "string"},
+                "BatchName": {"type": "string"}
+            }
+        },
+        "CreateEditSubmitApprovePayeeEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "PayeeID",
+                "PayeeName",
+                "PayeeAddress",
+                "PayeePhoneNumber",
+                "PayeeMatch"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "PayeeID": {"type": "string"},
+                "PayeeName": {"type": "string"},
+                "PayeeAddress": {"type": "string"},
+                "PayeePhoneNumber": {"type": "string"},
+                "PayeeMatch": {"type": "boolean"}
+            }
+        },
+        "DeletePayeeEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "PayeeID",
+                "PayeeName",
+                "PayeeAddress",
+                "PayeePhoneNumber",
+                "PayeeMatch"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "PayeeID": {"type": "string"},
+                "PayeeName": {"type": "string"},
+                "PayeeAddress": {"type": "string"},
+                "PayeePhoneNumber": {"type": "string"},
+                "PayeeMatch": {"type": "boolean"}
+            }
+        },
+        "RecurringPaymentFields": {
+            "type": "object",
+            "required": ["Recurring"],
+            "additionalProperties": false,
+            "properties": {
+                "Recurring": {"type": "boolean"},
+                "Period": {"type": "string"},
+                "StartDate": {"type": "string"},
+                "EndDate": {"type": "string"}
+            }
+        },
+        "BillPayFields": {
+            "type": "object",
+            "required": [
+                "PaymentID",
+                "PayeeID",
+                "PayeeName",
+                "PayeeAddress",
+                "PayeePhoneNumber",
+                "PayeeMatch",
+                "FromAccountNumber",
+                "AmountInUSDollars",
+                "PaymentType",
+                "RecurringPayment"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "PaymentID": {"type": "string"},
+                "PayeeID": {"type": "string"},
+                "PayeeName": {"type": "string"},
+                "PayeeAddress": {"type": "string"},
+                "PayeePhoneNumber": {"type": "string"},
+                "PayeeMatch": {"type": "boolean"},
+                "SubscribersPayeeAccountNumber": {"type": "string"},
+                "FromAccountNumber": {"type": "string"},
+                "FromAccountRoutingNumber": {"type": "string"},
+                "AmountInUSDollars": {"type": "number"},
+                "PaymentType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Check",
+                                "Electronic",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "PaymentDate": {"type": "string"},
+                "RecurringPayment": {"$ref": "#/definitions/RecurringPaymentFields"}
+            }
+        },
+        "CreateEditSubmitApproveBillPayEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/BillPayFields"}
+            }
+        },
+        "DeleteBillPayEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "PaymentID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "PaymentID": {"type": "string"}
+            }
+        },
+        "TransferFields": {
+            "type": "object",
+            "required": [
+                "Direction",
+                "FromAccount",
+                "ToAccount",
+                "ToAccountType",
+                "FromAccountType",
+                "AmountInUSDollars",
+                "TransferStatus",
+                "DualAuth",
+                "RecurringPayment"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Outgoing",
+                                "Incoming",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "FromAccount": {"type": "string"},
+                "ToAccount": {"type": "string"},
+                "ToAccountType": {"$ref": "#/definitions/AccountTypeData"},
+                "FromAccountType": {"$ref": "#/definitions/AccountTypeData"},
+                "AmountInUSDollars": {"type": "number"},
+                "TransferStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "DualAuth": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "True",
+                                "False",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "StatusReason": {"type": "string"},
+                "RecurringPayment": {"$ref": "#/definitions/RecurringPaymentFields"},
+                "AmountInISOCurrency": {"type": "number"},
+                "ExchangeRate": {"type": "number"},
+                "AmountCurrencyCode": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "AED",
+                                "AFN",
+                                "ALL",
+                                "AMD",
+                                "ANG",
+                                "AOA",
+                                "ARS",
+                                "AUD",
+                                "AWG",
+                                "AZN",
+                                "BAM",
+                                "BBD",
+                                "BDT",
+                                "BGN",
+                                "BHD",
+                                "BIF",
+                                "BMD",
+                                "BND",
+                                "BOB",
+                                "BOV",
+                                "BRL",
+                                "BSD",
+                                "BTN",
+                                "BWP",
+                                "BYR",
+                                "BZD",
+                                "CAD",
+                                "CDF",
+                                "CHE",
+                                "CHF",
+                                "CHW",
+                                "CLF",
+                                "CLP",
+                                "CNY",
+                                "COP",
+                                "COU",
+                                "CRC",
+                                "CUC",
+                                "CUP",
+                                "CVE",
+                                "CZK",
+                                "DJF",
+                                "DKK",
+                                "DOP",
+                                "DZD",
+                                "EGP",
+                                "ERN",
+                                "ETB",
+                                "EUR",
+                                "FJD",
+                                "FKP",
+                                "GBP",
+                                "GEL",
+                                "GHS",
+                                "GIP",
+                                "GMD",
+                                "GNF",
+                                "GTQ",
+                                "GYD",
+                                "HKD",
+                                "HNL",
+                                "HRK",
+                                "HTG",
+                                "HUF",
+                                "IDR",
+                                "ILS",
+                                "INR",
+                                "IQD",
+                                "IRR",
+                                "ISK",
+                                "JMD",
+                                "JOD",
+                                "JPY",
+                                "KES",
+                                "KGS",
+                                "KHR",
+                                "KMF",
+                                "KPW",
+                                "KRW",
+                                "KWD",
+                                "KYD",
+                                "KZT",
+                                "LAK",
+                                "LBP",
+                                "LKR",
+                                "LRD",
+                                "LSL",
+                                "LTL",
+                                "LYD",
+                                "MAD",
+                                "MDL",
+                                "MGA",
+                                "MKD",
+                                "MMK",
+                                "MNT",
+                                "MOP",
+                                "MRO",
+                                "MUR",
+                                "MVR",
+                                "MWK",
+                                "MXN",
+                                "MXV",
+                                "MYR",
+                                "MZN",
+                                "NAD",
+                                "NGN",
+                                "NIO",
+                                "NOK",
+                                "NPR",
+                                "NZD",
+                                "OMR",
+                                "Other",
+                                "PAB",
+                                "PEN",
+                                "PGK",
+                                "PHP",
+                                "PKR",
+                                "PLN",
+                                "PYG",
+                                "QAR",
+                                "RON",
+                                "RSD",
+                                "RUB",
+                                "RWF",
+                                "SAR",
+                                "SBD",
+                                "SCR",
+                                "SDG",
+                                "SEK",
+                                "SGD",
+                                "SHP",
+                                "SLL",
+                                "SOS",
+                                "SRD",
+                                "SSP",
+                                "STD",
+                                "SVC",
+                                "SYP",
+                                "SZL",
+                                "THB",
+                                "TJS",
+                                "TMT",
+                                "TND",
+                                "TOP",
+                                "TRY",
+                                "TTD",
+                                "TWD",
+                                "TZS",
+                                "UAH",
+                                "UGX",
+                                "Unknown",
+                                "USD",
+                                "USN",
+                                "USS",
+                                "UYI",
+                                "UYU",
+                                "UZS",
+                                "VEF",
+                                "VND",
+                                "VUV",
+                                "WST",
+                                "XAF",
+                                "XAG",
+                                "XAU",
+                                "XBA",
+                                "XBB",
+                                "XBC",
+                                "XBD",
+                                "XCD",
+                                "XDR",
+                                "XOF",
+                                "XPD",
+                                "XPF",
+                                "XPT",
+                                "XSU",
+                                "XTS",
+                                "XUA",
+                                "XXX",
+                                "YER",
+                                "ZAR",
+                                "ZMW",
+                                "ZWL"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "FundTransferFields": {
+            "required": [
+                "ReceivingBankID",
+                "Recipient",
+                "DestinationType"
+            ],
+            "allOf": [
+                {"$ref": "#/definitions/TransferFields"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "ReceivingBankID": {"type": "string"},
+                        "ReceivingBankName": {"type": "string"},
+                        "Recipient": {"type": "string"},
+                        "OtherInstructions": {"type": "string"},
+                        "DestinationType": {"$ref": "#/definitions/DestinationTypeData"}
+                    }
+                }
+            ]
+        },
+        "CreateEditSubmitApproveFTTemplateEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TransferType",
+                "TemplateName",
+                "EventFields",
+                "WireStatus"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TransferType": {"$ref": "#/definitions/TransferTypeData"},
+                "TemplateName": {"type": "string"},
+                "EventFields": {"$ref": "#/definitions/FundTransferFields"},
+                "WireStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "StatusReason": {"type": "string"}
+            }
+        },
+        "DeleteFTTemplateEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TransferType",
+                "TemplateName"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TransferType": {"$ref": "#/definitions/TransferTypeData"},
+                "TemplateName": {"type": "string"},
+                "DestinationType": {"$ref": "#/definitions/DestinationTypeData"}
+            }
+        },
+        "CreateEditSubmitApproveFTEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TransferID",
+                "TransferType",
+                "FromTemplate",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TransferID": {"type": "string"},
+                "TransferType": {"$ref": "#/definitions/TransferTypeData"},
+                "FromTemplate": {"type": "boolean"},
+                "TemplateName": {"type": "string"},
+                "EventFields": {"$ref": "#/definitions/FundTransferFields"}
+            }
+        },
+        "DeleteFTEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TransferID",
+                "TransferType",
+                "FromTemplate"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TransferID": {"type": "string"},
+                "TransferType": {"$ref": "#/definitions/TransferTypeData"},
+                "FromTemplate": {"type": "boolean"},
+                "TemplateName": {"type": "string"},
+                "DestinationType": {"$ref": "#/definitions/DestinationTypeData"}
+            }
+        },
+        "LinkAccountFields": {
+            "type": "object",
+            "required": [
+                "ToAccount",
+                "AccountLinkStatus"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "ToAccount": {"type": "string"},
+                "ToAccountType": {"$ref": "#/definitions/AccountTypeData"},
+                "ToAccountHolderName": {"type": "string"},
+                "AccountLinkStatus": {"type": "boolean"}
+            }
+        },
+        "LinkInternalAccountEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/LinkAccountFields"}
+            }
+        },
+        "LinkExternalAccountFields": {
+            "required": ["ReceivingBankID"],
+            "allOf": [
+                {"$ref": "#/definitions/LinkAccountFields"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "ReceivingBankID": {"type": "string"}
+                    }
+                }
+            ]
+        },
+        "LinkExternalAccountEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/LinkExternalAccountFields"}
+            }
+        },
+        "UnlinkInternalAccountEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/LinkAccountFields"}
+            }
+        },
+        "UnlinkExternalAccountEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/LinkExternalAccountFields"}
+            }
+        },
+        "WireTransferFields": {
+            "required": [
+                "SendingBankID",
+                "ReceivingBankID",
+                "Recipient",
+                "DestinationType",
+                "EffectiveDate"
+            ],
+            "allOf": [
+                {"$ref": "#/definitions/TransferFields"},
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "SendingBankID": {"type": "string"},
+                        "ReceivingBankID": {"type": "string"},
+                        "ReceivingBankName": {"type": "string"},
+                        "Sender": {"type": "string"},
+                        "SenderAddress": {"type": "string"},
+                        "SenderPhoneNumber": {"type": "string"},
+                        "Recipient": {"type": "string"},
+                        "RecipientAddress": {"type": "string"},
+                        "RecipientPhoneNumber": {"type": "string"},
+                        "OtherInstructions": {"type": "string"},
+                        "DestinationType": {"$ref": "#/definitions/DestinationTypeData"},
+                        "Country": {"type": "string"},
+                        "EffectiveDate": {"type": "string"},
+                        "SettlementMethod": {
+                            "allOf": [
+                                {"type": "string"},
+                                {
+                                    "enum": [
+                                        "FED",
+                                        "SWIFT",
+                                        "BOOK",
+                                        "FX",
+                                        "CHIPS",
+                                        "Unknown"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "CreateEditSubmitApproveWireTemplateEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TemplateName",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TemplateName": {"type": "string"},
+                "EventFields": {"$ref": "#/definitions/WireTransferFields"}
+            }
+        },
+        "DeleteWireTemplateEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TemplateName"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TemplateName": {"type": "string"},
+                "DestinationType": {"$ref": "#/definitions/DestinationTypeData"}
+            }
+        },
+        "CreateEditSubmitApproveWireEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TransferID",
+                "EntryMethod",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TransferID": {"type": "string"},
+                "EntryMethod": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Free Form",
+                                "From Template",
+                                "From File",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "TemplateName": {"type": "string"},
+                "FileName": {"type": "string"},
+                "EventFields": {"$ref": "#/definitions/WireTransferFields"}
+            }
+        },
+        "DeleteWireEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TransferID",
+                "FromTemplate"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TransferID": {"type": "string"},
+                "FromTemplate": {"type": "boolean"},
+                "TemplateName": {"type": "string"},
+                "DestinationType": {"$ref": "#/definitions/DestinationTypeData"}
+            }
+        },
+        "RemoteDepositFields": {
+            "type": "object",
+            "required": [
+                "FromAccount",
+                "FromBankID",
+                "ToAccount",
+                "AmountInUSDollars",
+                "RemoteDepositStatus"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "FromAccount": {"type": "string"},
+                "FromBankID": {"type": "string"},
+                "FromBankName": {"type": "string"},
+                "PayeeName": {"type": "string"},
+                "ToAccount": {"type": "string"},
+                "AmountInUSDollars": {"type": "number"},
+                "RemoteDepositStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PendingSubmission",
+                                "PendingApproval",
+                                "Approved",
+                                "Rejected",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "StatusReason": {"type": "string"},
+                "CheckNumber": {"type": "string"}
+            }
+        },
+        "RemoteDepositCaptureEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "EventFields"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "EventFields": {"$ref": "#/definitions/RemoteDepositFields"}
+            }
+        },
+        "SingleSignOnEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "SystemAccessed",
+                "SystemType"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "SystemAccessed": {"type": "string"},
+                "SystemType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Account Opening",
+                                "Bill Pay",
+                                "Check Ordering",
+                                "Credit Card Payment",
+                                "External Transfer",
+                                "Loan Service",
+                                "Remote Check Deposit",
+                                "Statements",
+                                "Notification Options",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "LoginEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "LoginStatus"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "LoginStatus": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Successful",
+                                "SystemDown",
+                                "InvalidCredentials",
+                                "UserAccessRestricted",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "StatusReason": {"type": "string"}
+            }
+        },
+        "MFAChallengeRequestEvent": {
+            "type": "object",
+            "required": [
+                "ActivityAttempted",
+                "ChallengeReason",
+                "Common",
+                "RetailSession",
+                "BusinessSession",
+                "MobileRetailSession",
+                "MobileBusinessSession"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "ActivityAttempted": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "AccountMgt",
+                                "ACH",
+                                "BillPay",
+                                "CheckImageView",
+                                "Login",
+                                "MFAOptionsChanged",
+                                "PasswordChange",
+                                "RemoteDepositCapture",
+                                "SingleSignOn",
+                                "Transfer",
+                                "UserMgt",
+                                "Wire",
+                                "Other",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "ChallengeReason": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "DeviceUnrecognized",
+                                "UserAccessRestricted",
+                                "SystemOrAdminForcedReset",
+                                "UserCausedReset",
+                                "UserPreference",
+                                "ActivityRestricted",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Duration": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "CurrentSession",
+                                "CurrentEvent",
+                                "UntilReset",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "SystemName": {"type": "string"},
+                "OOBAChannelData": {"type": "string"},
+                "OOBAChannelType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Phone",
+                                "Email",
+                                "Text",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"}
+            }
+        },
+        "MFAChallengeResponseEvent": {
+            "type": "object",
+            "required": [
+                "ActivityAttempted",
+                "State",
+                "ChallengeReason",
+                "Duration",
+                "Common",
+                "RetailSession",
+                "BusinessSession",
+                "MobileRetailSession",
+                "MobileBusinessSession"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "ActivityAttempted": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "AccountMgt",
+                                "ACH",
+                                "BillPay",
+                                "CheckImageView",
+                                "Login",
+                                "MFAOptionsChanged",
+                                "PasswordChange",
+                                "RemoteDepositCapture",
+                                "SingleSignOn",
+                                "Transfer",
+                                "UserMgt",
+                                "Wire",
+                                "Other",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                },
+                "State": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "ChallengeRequested",
+                                "Success",
+                                "FailedAuthentication",
+                                "TimedOut",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "ChallengeReason": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "DeviceUnrecognized",
+                                "UserAccessRestricted",
+                                "SystemOrAdminForcedReset",
+                                "UserCausedReset",
+                                "UserPreference",
+                                "ActivityRestricted",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Duration": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "CurrentSession",
+                                "CurrentEvent",
+                                "UntilReset",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "SystemName": {"type": "string"},
+                "TimeTaken": {"type": "string"},
+                "OOBAChannelData": {"type": "string"},
+                "OOBAChannelType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Phone",
+                                "Email",
+                                "Text",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"}
+            }
+        },
+        "DeviceRegisteredEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "DeviceID",
+                "DeviceType"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "DeviceID": {"type": "string"},
+                "DeviceType": {"type": "string"}
+            }
+        },
+        "LogoutEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "LogoutReason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "LogoutReason": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "SystemTimedOut",
+                                "UserInitiated",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "CreateEditDeleteAlertEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "AffectedImmutableUserID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "AffectedImmutableUserID": {"type": "string"},
+                "Description": {"type": "string"}
+            }
+        },
+        "CreateEditBankAccountEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "AffectedImmutableUserID",
+                "AccountNumber",
+                "Attribute",
+                "NewValue",
+                "PriorValue"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "AffectedImmutableUserID": {"type": "string"},
+                "AccountNumber": {"type": "string"},
+                "Type": {"$ref": "#/definitions/AccountTypeData"},
+                "Attribute": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "NameOnAccount",
+                                "ContactAddress",
+                                "ContactPhoneNumber",
+                                "ContactEMail",
+                                "Limit",
+                                "Permission",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "NewValue": {"type": "string"},
+                "PriorValue": {"type": "string"},
+                "DisplayInformation": {"type": "string"}
+            }
+        },
+        "DeleteBankAccountEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "AccountNumber",
+                "AffectedImmutableUserID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "AccountNumber": {"type": "string"},
+                "AffectedImmutableUserID": {"type": "string"}
+            }
+        },
+        "CreateEditDeleteMFAMethodEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "AffectedImmutableUserID",
+                "OOBAChannelTypeData",
+                "MFAType",
+                "NewMFAType",
+                "PriorMFAType"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "AffectedImmutableUserID": {"type": "string"},
+                "OOBAChannelTypeData": {"$ref": "#/definitions/OOBAChannelTypeData"},
+                "MFAType": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Question",
+                                "Image",
+                                "SecurityPhrase",
+                                "Channel",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "DeviceID": {"type": "string"},
+                "NewMFAType": {"type": "string"},
+                "PriorMFAType": {"type": "string"},
+                "PriorChannelType": {"type": "string"},
+                "NewChannelType": {"type": "string"}
+            }
+        },
+        "CreateEditUserEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "AffectedImmutableUserID",
+                "Attribute",
+                "NewValue"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "AffectedImmutableUserID": {"type": "string"},
+                "Attribute": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "eMail",
+                                "Address",
+                                "PhoneNumber",
+                                "NameOnAccount",
+                                "SignOnID",
+                                "Limit",
+                                "Permission",
+                                "Role",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "AttributeQualifier": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Home",
+                                "Work",
+                                "Mobile",
+                                "Primary",
+                                "Secondary",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "NewValue": {"type": "string"},
+                "PriorValue": {"type": "string"},
+                "DisplayInformation": {"type": "string"}
+            }
+        },
+        "DeleteUserEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "AffectedImmutableUserID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "AffectedImmutableUserID": {"type": "string"},
+                "AffectedUserSignOnID": {"type": "string"}
+            }
+        },
+        "CreateEditDeleteUserEnrollmentEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "SystemName",
+                "AffectedImmutableUserID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "SystemName": {"$ref": "#/definitions/SystemTypeData"},
+                "AffectedImmutableUserID": {"type": "string"}
+            }
+        },
+        "PasswordChangeEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "PasswordChangeReason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "PasswordChangeReason": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Forgotten",
+                                "AdminReset",
+                                "UserInitiated",
+                                "Expired",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "AffectedImmutableUserID": {"type": "string"}
+            }
+        },
+        "InformationalEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "RetailSession",
+                "BusinessSession",
+                "MobileRetailSession",
+                "MobileBusinessSession"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"}
+            }
+        },
+        "ViewCheckImageEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "CheckNumber"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "CheckNumber": {"type": "string"}
+            }
+        },
+        "ViewReportEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "Name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "Name": {"type": "string"}
+            }
+        },
+        "ViewUserEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "ViewedImmutableUserID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "ViewedImmutableUserID": {"type": "string"}
+            }
+        },
+        "getAccountRiskEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "RetailSession",
+                "BusinessSession",
+                "MobileRetailSession",
+                "MobileBusinessSession"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"}
+            }
+        },
+        "CreateEditSubmitApproveP2PTransferEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "RecipientID",
+                "PaymentID",
+                "RecipientName",
+                "RecipientPhone",
+                "RecipientEmail",
+                "RecipientBankID",
+                "RecipientAccount",
+                "RecipientBankName",
+                "AmountInUSDollars",
+                "AmountInOriginatingCurrency",
+                "Type",
+                "Direction",
+                "TransferMode",
+                "Description",
+                "StatusReason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "RecipientID": {"type": "string"},
+                "PaymentID": {"type": "string"},
+                "RecipientName": {"type": "string"},
+                "RecipientPhone": {"type": "string"},
+                "RecipientEmail": {"type": "string"},
+                "RecipientBankID": {"type": "string"},
+                "RecipientAccount": {"type": "string"},
+                "RecipientBankName": {"type": "string"},
+                "TokenType": {"type": "string"},
+                "TokenValue": {"type": "string"},
+                "TokenStatus": {"type": "string"},
+                "FailureCode": {"type": "string"},
+                "FailureDescription": {"type": "string"},
+                "AmountInUSDollars": {"type": "number"},
+                "AmountInOriginatingCurrency": {"type": "number"},
+                "Type": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "PayPal",
+                                "Popmoney",
+                                "clearXchange",
+                                "Square",
+                                "AmexServe",
+                                "Venmo",
+                                "Dwolla",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Direction": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Incoming",
+                                "Outgoing",
+                                "Funding",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "TransferMode": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "Send",
+                                "Request",
+                                "Unknown",
+                                "Other"
+                            ]
+                        }
+                    ]
+                },
+                "Description": {"type": "string"},
+                "StatusReason": {"type": "string"}
+            }
+        },
+        "DeleteP2PTransferEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "PaymentID",
+                "RecipientName",
+                "RecipientID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "PaymentID": {"type": "string"},
+                "RecipientName": {"type": "string"},
+                "RecipientID": {"type": "string"}
+            }
+        },
+        "GAEvent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"type": "string"},
+                "Version": {"type": "string"},
+                "ACHCreditEntry": {"$ref": "#/definitions/ACHCreditOrDebitEntryEvent"},
+                "ACHDebitEntry": {"$ref": "#/definitions/ACHCreditOrDebitEntryEvent"},
+                "ACHParticipantCreate": {"$ref": "#/definitions/CreateEditSubmitApproveACHParticipantEvent"},
+                "ACHParticipantEdit": {"$ref": "#/definitions/CreateEditSubmitApproveACHParticipantEvent"},
+                "ACHParticipantSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveACHParticipantEvent"},
+                "ACHParticipantApprove": {"$ref": "#/definitions/CreateEditSubmitApproveACHParticipantEvent"},
+                "ACHParticipantDelete": {"$ref": "#/definitions/DeleteACHParticipantEvent"},
+                "ACHTemplateCreate": {"$ref": "#/definitions/CreateEditSubmitApproveACHTemplateEvent"},
+                "ACHTemplateEdit": {"$ref": "#/definitions/CreateEditSubmitApproveACHTemplateEvent"},
+                "ACHTemplateSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveACHTemplateEvent"},
+                "ACHTemplateApprove": {"$ref": "#/definitions/CreateEditSubmitApproveACHTemplateEvent"},
+                "ACHTemplateDelete": {"$ref": "#/definitions/DeleteACHTemplateEvent"},
+                "ACHBatchCreate": {"$ref": "#/definitions/CreateEditSubmitApproveACHBatchEvent"},
+                "ACHBatchEdit": {"$ref": "#/definitions/CreateEditSubmitApproveACHBatchEvent"},
+                "ACHBatchSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveACHBatchEvent"},
+                "ACHBatchApprove": {"$ref": "#/definitions/CreateEditSubmitApproveACHBatchEvent"},
+                "ACHBatchDelete": {"$ref": "#/definitions/DeleteACHBatchEvent"},
+                "PayeeCreate": {"$ref": "#/definitions/CreateEditSubmitApprovePayeeEvent"},
+                "PayeeEdit": {"$ref": "#/definitions/CreateEditSubmitApprovePayeeEvent"},
+                "PayeeSubmit": {"$ref": "#/definitions/CreateEditSubmitApprovePayeeEvent"},
+                "PayeeApprove": {"$ref": "#/definitions/CreateEditSubmitApprovePayeeEvent"},
+                "PayeeDelete": {"$ref": "#/definitions/DeletePayeeEvent"},
+                "BillPayCreate": {"$ref": "#/definitions/CreateEditSubmitApproveBillPayEvent"},
+                "BillPayEdit": {"$ref": "#/definitions/CreateEditSubmitApproveBillPayEvent"},
+                "BillPaySubmit": {"$ref": "#/definitions/CreateEditSubmitApproveBillPayEvent"},
+                "BillPayApprove": {"$ref": "#/definitions/CreateEditSubmitApproveBillPayEvent"},
+                "BillPayDelete": {"$ref": "#/definitions/DeleteBillPayEvent"},
+                "TransferTemplateCreate": {"$ref": "#/definitions/CreateEditSubmitApproveFTTemplateEvent"},
+                "TransferTemplateEdit": {"$ref": "#/definitions/CreateEditSubmitApproveFTTemplateEvent"},
+                "TransferTemplateSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveFTTemplateEvent"},
+                "TransferTemplateApprove": {"$ref": "#/definitions/CreateEditSubmitApproveFTTemplateEvent"},
+                "TransferTemplateDelete": {"$ref": "#/definitions/DeleteFTTemplateEvent"},
+                "TransferCreate": {"$ref": "#/definitions/CreateEditSubmitApproveFTEvent"},
+                "TransferEdit": {"$ref": "#/definitions/CreateEditSubmitApproveFTEvent"},
+                "TransferApprove": {"$ref": "#/definitions/CreateEditSubmitApproveFTEvent"},
+                "TransferSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveFTEvent"},
+                "TransferDelete": {"$ref": "#/definitions/DeleteFTEvent"},
+                "InternalAccountLink": {"$ref": "#/definitions/LinkInternalAccountEvent"},
+                "ExternalAccountLink": {"$ref": "#/definitions/LinkExternalAccountEvent"},
+                "InternalAccountUnlink": {"$ref": "#/definitions/UnlinkInternalAccountEvent"},
+                "ExternalAccountUnlink": {"$ref": "#/definitions/UnlinkExternalAccountEvent"},
+                "WireTemplateCreate": {"$ref": "#/definitions/CreateEditSubmitApproveWireTemplateEvent"},
+                "WireTemplateEdit": {"$ref": "#/definitions/CreateEditSubmitApproveWireTemplateEvent"},
+                "WireTemplateSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveWireTemplateEvent"},
+                "WireTemplateApprove": {"$ref": "#/definitions/CreateEditSubmitApproveWireTemplateEvent"},
+                "WireTemplateDelete": {"$ref": "#/definitions/DeleteWireTemplateEvent"},
+                "WireCreate": {"$ref": "#/definitions/CreateEditSubmitApproveWireEvent"},
+                "WireEdit": {"$ref": "#/definitions/CreateEditSubmitApproveWireEvent"},
+                "WireApprove": {"$ref": "#/definitions/CreateEditSubmitApproveWireEvent"},
+                "WireSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveWireEvent"},
+                "WireDelete": {"$ref": "#/definitions/DeleteWireEvent"},
+                "RemoteDepositCapture": {"$ref": "#/definitions/RemoteDepositCaptureEvent"},
+                "SingleSignOn": {"$ref": "#/definitions/SingleSignOnEvent"},
+                "Login": {"$ref": "#/definitions/LoginEvent"},
+                "ChallengeRequest": {"$ref": "#/definitions/MFAChallengeRequestEvent"},
+                "ChallengeResponse": {"$ref": "#/definitions/MFAChallengeResponseEvent"},
+                "DeviceRegistered": {"$ref": "#/definitions/DeviceRegisteredEvent"},
+                "Logout": {"$ref": "#/definitions/LogoutEvent"},
+                "AlertCreate": {"$ref": "#/definitions/CreateEditDeleteAlertEvent"},
+                "AlertEdit": {"$ref": "#/definitions/CreateEditDeleteAlertEvent"},
+                "AlertDelete": {"$ref": "#/definitions/CreateEditDeleteAlertEvent"},
+                "AccountCreate": {"$ref": "#/definitions/CreateEditBankAccountEvent"},
+                "AccountEdit": {"$ref": "#/definitions/CreateEditBankAccountEvent"},
+                "AccountDelete": {"$ref": "#/definitions/DeleteBankAccountEvent"},
+                "MFAMethodCreate": {"$ref": "#/definitions/CreateEditDeleteMFAMethodEvent"},
+                "MFAMethodEdit": {"$ref": "#/definitions/CreateEditDeleteMFAMethodEvent"},
+                "MFAMethodDelete": {"$ref": "#/definitions/CreateEditDeleteMFAMethodEvent"},
+                "UserCreate": {"$ref": "#/definitions/CreateEditUserEvent"},
+                "UserEdit": {"$ref": "#/definitions/CreateEditUserEvent"},
+                "UserDelete": {"$ref": "#/definitions/DeleteUserEvent"},
+                "UserEnrollmentCreate": {"$ref": "#/definitions/CreateEditDeleteUserEnrollmentEvent"},
+                "UserEnrollmentEdit": {"$ref": "#/definitions/CreateEditDeleteUserEnrollmentEvent"},
+                "UserEnrollmentDelete": {"$ref": "#/definitions/CreateEditDeleteUserEnrollmentEvent"},
+                "PasswordChange": {"$ref": "#/definitions/PasswordChangeEvent"},
+                "Informational": {"$ref": "#/definitions/InformationalEvent"},
+                "CheckImageView": {"$ref": "#/definitions/ViewCheckImageEvent"},
+                "ReportView": {"$ref": "#/definitions/ViewReportEvent"},
+                "UserView": {"$ref": "#/definitions/ViewUserEvent"},
+                "getAccountRisk": {"$ref": "#/definitions/getAccountRiskEvent"},
+                "P2PTransferCreate": {"$ref": "#/definitions/CreateEditSubmitApproveP2PTransferEvent"},
+                "P2PTransferEdit": {"$ref": "#/definitions/CreateEditSubmitApproveP2PTransferEvent"},
+                "P2PTransferApprove": {"$ref": "#/definitions/CreateEditSubmitApproveP2PTransferEvent"},
+                "P2PTransferSubmit": {"$ref": "#/definitions/CreateEditSubmitApproveP2PTransferEvent"},
+                "P2PTransferDelete": {"$ref": "#/definitions/DeleteP2PTransferEvent"}
+            }
+        },
+        "CreateEditDeleteParticipantInTemplateEvent": {
+            "type": "object",
+            "required": [
+                "Common",
+                "TemplateName",
+                "Participant"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "APIEventName": {"$ref": "#/definitions/APIEventName"},
+                "Common": {"$ref": "#/definitions/CommonData"},
+                "RetailSession": {"$ref": "#/definitions/RetailSessionData"},
+                "BusinessSession": {"$ref": "#/definitions/BusinessSessionData"},
+                "MobileRetailSession": {"$ref": "#/definitions/MobileRetailSessionData"},
+                "MobileBusinessSession": {"$ref": "#/definitions/MobileBusinessSessionData"},
+                "TemplateName": {"type": "string"},
+                "Participant": {"$ref": "#/definitions/ACHParticipantFields"}
+            }
+        },
+        "MFAOptionsChangedFields": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NewValue": {"type": "string"},
+                "PriorValue": {"type": "string"}
+            }
+        },
+        "AlertChangedFields": {
+            "type": "object",
+            "required": ["NewValue"],
+            "additionalProperties": false,
+            "properties": {
+                "NewValue": {"type": "string"},
+                "PriorValue": {"type": "string"},
+                "Alert": {"type": "string"}
+            }
+        },
+        "TransferTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "External",
+                        "Internal",
+                        "Self",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "AccountTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Brokerage",
+                        "Checking",
+                        "Credit Card",
+                        "Loan",
+                        "Retirement",
+                        "Money Market",
+                        "Saving",
+                        "Certificate of Deposit",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "DestinationTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Domestic",
+                        "International",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "OOBAChannelTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Phone",
+                        "SMS",
+                        "Email",
+                        "App",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "SystemTypeData": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "BankingChannel",
+                        "TransferMethod",
+                        "AccountUpgrade",
+                        "Unknown",
+                        "Other"
+                    ]
+                }
+            ]
+        }
+    },
+    "anyOf": [
+        {
+            "type": "object",
+            "properties": {
+                "GAEvent": {"$ref": "#/definitions/GAEvent"}
+            },
+            "additionalProperties": false
+        },
+        {
+            "type": "object",
+            "properties": {
+                "Version": {"type": "string"}
+            },
+            "additionalProperties": false
+        },
+        {
+            "type": "object",
+            "properties": {
+                "TranCode": {"type": "string"}
+            },
+            "additionalProperties": false
+        },
+        {
+            "type": "object",
+            "properties": {
+                "TraceNumber": {"type": "string"}
+            },
+            "additionalProperties": false
+        },
+        {
+            "type": "object",
+            "properties": {
+                "Amount": {"type": "number"}
+            },
+            "additionalProperties": false
+        },
+        {
+            "type": "object",
+            "properties": {
+                "Description": {"type": "string"}
+            },
+            "additionalProperties": false
+        },
+        {
+            "type": "object",
+            "properties": {
+                "IsOffset": {
+                    "allOf": [
+                        {"type": "string"},
+                        {
+                            "enum": [
+                                "True",
+                                "False",
+                                "Unknown"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    ]
+}
