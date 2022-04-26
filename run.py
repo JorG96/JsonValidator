@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import datetime
 from Helpers import logSearch,iterFile,getSummary
 from config import DATA_DIRECTORY,OUTPUT_DIRECTORY,JSON_SCHEMA
