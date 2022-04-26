@@ -41,8 +41,12 @@ def iterFile(file_path,schema_path):
     fileResults=list()
     with open(file_path,"r") as file :
         for i,line in enumerate(file):
-            json_file=json.loads(line)
-            fileResults+=[validateJson(schema_path,json_file,file_path)]
+            try:
+                json_file=json.loads(line)
+                fileResults+=[validateJson(schema_path,json_file,file_path)]
+            except:
+                fileResults+=[[f"{file_path}|InvalidJson|NaN|Invalid Json Format"]]
     return (fileResults,i+1)
+    
 
 
