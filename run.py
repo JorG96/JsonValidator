@@ -8,7 +8,7 @@ def run(data_directory=DATA_DIRECTORY):
 
     logList=logSearch(data_directory)
     eventsNumber=0
-    with open(f"""{OUTPUT_DIRECTORY}{now}.csv""",'w') as output_file:
+    with open(f"""{OUTPUT_DIRECTORY}{now}.csv""",'a') as output_file:
         output_file.write("File|Event|Error_Path|Error\n")
         for log in logList:
             errors,logLen=iterFile(log,JSON_SCHEMA)
