@@ -1,2 +1,2 @@
-*.txt
-*.csv
+/Output/*.txt
+/Output/*.csv
