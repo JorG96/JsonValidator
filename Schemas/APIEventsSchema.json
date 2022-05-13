@@ -2173,7 +2173,6 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "APIEventName": {"type": "string"},
                 "Version": {"type": "string"},
                 "ACHCreditEntry": {"$ref": "#/definitions/ACHCreditOrDebitEntryEvent"},
                 "ACHDebitEntry": {"$ref": "#/definitions/ACHCreditOrDebitEntryEvent"},
