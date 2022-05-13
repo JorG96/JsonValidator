@@ -1,5 +1,5 @@
 import json
-from jsonschema import validate,Draft4Validator, ValidationError, SchemaError
+from jsonschema import Draft4Validator
 
 def validateJson(schemaPath,json_file,file_path):
     suberror_list=list()
