@@ -1,5 +1,6 @@
-/Output/*.txt
-/Output/*.csv
+*.txt
+*.csv
+*.dsv
 *.pyc
 /__pycache__/
 /Helpers/__pycache__/

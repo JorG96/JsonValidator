@@ -27,8 +27,9 @@ def getSummary(path,output_folder,output_file,events_number):
     eventsCount_EV['Event_Invalid']=eventsCount_EV['Event_Total']-eventsCount_EV['Event_Valid']
     eventsCount_EV['Event_Valid%']=eventsCount_EV['Event_Valid']/eventsCount_EV['Event_Total']*100
     eventsCount_EV['Event_Invalid%']=eventsCount_EV['Event_Invalid']/eventsCount_EV['Event_Total']*100
+    eventsCount_EV['Event_percentage']=eventsCount/totalEvents*100
     eventsCount_EV=eventsCount_EV.astype({'Event_Valid':int,'Event_Invalid':int})
-    eventsCount_EV=eventsCount_EV.round({'Event_Valid%':2,'Event_Invalid%':2})
+    eventsCount_EV=eventsCount_EV.round({'Event_percentage':2,'Event_Valid%':2,'Event_Invalid%':2})
     
     #output
     with open(os.path.join(output_folder, output_file),'w') as outfile:
