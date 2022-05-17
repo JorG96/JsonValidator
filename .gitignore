@@ -1,2 +1,4 @@
 /Output/*.txt
 /Output/*.csv
+*.pyc
+/__pycache__/
