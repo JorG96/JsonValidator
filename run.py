@@ -28,7 +28,7 @@ def main(data_directory=DATA_DIRECTORY):
             for error in errors:               
                 output_file.write("\n".join(error))
                 output_file.write("\n")
-    getSummary(f"""{OUTPUT_DIRECTORY}/{now}.dsv""",OUTPUT_DIRECTORY,f"{now}_Summary.txt",eventsNumber)
+    # getSummary(f"""{OUTPUT_DIRECTORY}/{now}.dsv""",OUTPUT_DIRECTORY,f"{now}_Summary.txt",eventsNumber)
     print(f"output file in:{OUTPUT_DIRECTORY}")
 
 if __name__=='__main__':
